@@ -6,7 +6,10 @@ from os.path import splitext
 from docutils import parsers, nodes
 from sphinx import addnodes
 
-from CommonMark import Parser
+try:
+    from commonmark import Parser
+except ImportError:
+    from CommonMark import Parser
 
 from warnings import warn
 
